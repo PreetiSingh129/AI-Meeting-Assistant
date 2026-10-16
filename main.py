@@ -19,7 +19,7 @@ def run_pipeline(source :str, language :str = "english") -> dict:
     transcript = transcribe_all(chunks,language)
     if not transcript:
         raise RuntimeError("No speech was detected in the supplied audio.")
-    print(f"raw transcription (first 300 characters ) {transcript[:300]}")
+    print(f"\nFull transcription:\n{transcript}")
 
     title = generate_title(transcript)
 
